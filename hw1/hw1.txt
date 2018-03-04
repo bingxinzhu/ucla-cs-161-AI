@@ -1,0 +1,75 @@
+1.
+test case:
+[4]> (PAD 1)
+1
+[5]> (PAD 2)
+1
+[6]> (PAD 3)
+2
+[7]> (PAD 4)
+2
+[8]> (PAD 5)
+3
+[9]> (PAD 6)
+4
+[10]> (PAD 7)
+5
+[11]> (PAD 8)
+7
+[12]> (PAD 9)
+9
+[13]> (PAD 10)
+12
+[14]> (PAD 234939257070175709)
+
+*** - Program stack overflow. RESET
+
+answer to question:
+if N is really big, my program can not execute that and says there is stack overflow, I think this is because we are doing recursive function call, and too much calls make the stack overflow. We could change it to tail recursion to avoid this problem.
+
+2.
+
+test case:
+[5]> (SUMS 1)
+0
+[6]> (SUMS 2)
+0
+[7]> (SUMS 3)
+1
+[8]> (SUMS 4)
+1
+[9]> (SUMS 5)
+2
+[10]> (SUMS 6)
+3
+[11]> (SUMS 7)
+4
+[12]> (SUMS 8)
+6
+[13]> (SUMS 9)
+8
+[14]> (SUMS 10)
+11
+
+
+answer to question:
+the value of PAD = (the value of SUMS) + 1
+the reason is the number of recursive call for SUMS and PAD is same, but the base case: n =0, n = 1, n = 2, for SUMS those are all equal to 0, for all PAD those are all equal to 1 so there is +1 at the end
+
+3.
+test case:
+ANON
+[18]> (ANON '42)
+?
+[19]> (ANON 'FOO)
+?
+[20]> (ANON '(((L E) F) T))
+(((? ?) ?) ?)
+[21]> (ANON '(5 FOO 3.1 -0.2))
+(? ? ? ?)
+[22]> (ANON '(1 (FOO 3.1) -0.2))
+(? (? ?) ?)
+[23]> (ANON '(((1 2) (FOO 3.1)) (BAR -0.2)))
+(((? ?) (? ?)) (? ?))
+[24]> (ANON '(R (I (G (H T)))))
+(? (? (? (? ?))))
